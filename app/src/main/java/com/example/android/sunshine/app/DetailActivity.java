@@ -15,13 +15,13 @@
  */
 package com.example.android.sunshine.app;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class DetailActivity extends ActionBarActivity {
+public class DetailActivity extends Activity {
 
     public static final String DATE_KEY = "forecast_date";
 
@@ -41,7 +41,7 @@ public class DetailActivity extends ActionBarActivity {
             DetailFragment fragment = new DetailFragment();
             fragment.setArguments(arguments);
 
-            getSupportFragmentManager().beginTransaction()
+            getFragmentManager().beginTransaction()
                     .add(R.id.weather_detail_container, fragment)
                     .commit();
         }
